@@ -8,24 +8,27 @@ class ContractForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            freelancerName: "",
-            clientName: "",
-            serviceDescription: "",
+            freelancerName: "Developer's complete name ",
+            clientName: "Client's complete name ",
+            serviceDescription: "Describe what the developer will do. Include any milestones.",
             serviceDueDate: "",
-            serviceFee: numeral.defaultFormat('$0,0.00'),
-            paymentConditions: "",
-            expenses
+            serviceFee: "",
+            paymentConditions: ' describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery',
+            stateLocation: "",
+            executionDate: "",
         }
 
     }
     handleChangeFreela = (event) => {
+        let str = event.target.value
         this.setState({
-            freelancerName: event.target.value,
+            freelancerName: str.toUpperCase(),
         })
     }
     handleChangeClient = (event) => {
+        let string = event.target.value
         this.setState({
-            clientName: event.target.value,
+            clientName: string.toUpperCase(),
         })
     }
 
@@ -53,6 +56,14 @@ class ContractForm extends Component {
         })
     }
 
+    handleChangeStateLocation = (event) => {
+        this.setState({
+            stateLocation: event.target.value,
+        })
+    }
+
+    
+
 
     render() {
         return (
@@ -62,6 +73,7 @@ class ContractForm extends Component {
                     <div className="input-container">
                         <div className="input-container-text freelancer-name">
                             <form onClick={this.handleSubmit}>
+
                                 <h4 className="input-title">Freelancer's complete name</h4>
                                 <input 
                                 className="title-input" 
@@ -69,6 +81,7 @@ class ContractForm extends Component {
                                 freelancerName={this.state.value} 
                                 onChange={this.handleChangeFreela}>
                                 </input>
+
                                 <h4 className="input-title">Client's complete name</h4>
                                 <input 
                                 className="title-input" 
@@ -76,6 +89,7 @@ class ContractForm extends Component {
                                 clientName={this.state.value} 
                                 onChange={this.handleChangeClient}>
                                 </input>
+
                                 <h4 className="input-title">Service description</h4>
                                 <input 
                                 className="title-input" 
@@ -83,6 +97,7 @@ class ContractForm extends Component {
                                 serviceDescription={this.state.value} 
                                 onChange={this.handleChangeService}>
                                 </input>
+                                
                                 <h4 className="input-title">Service due date</h4>
                                 <input 
                                 className="title-input"
@@ -91,6 +106,7 @@ class ContractForm extends Component {
                                 serviceDueDate={this.state.value} 
                                 onChange={this.handleChangeServiceDueDate}>
                                 </input>
+                                
                                 <h4 className="input-title">Service fee</h4>
                                 <input 
                                 className="title-input"
@@ -99,6 +115,7 @@ class ContractForm extends Component {
                                 serviceFee={this.state.value} 
                                 onChange={this.handleChangeServiceFee}>
                                 </input>
+                                
                                 <h4 className="input-title">Payment conditions</h4>
                                 <input 
                                 className="title-input"
@@ -107,6 +124,21 @@ class ContractForm extends Component {
                                 paymentConditions={this.state.value} 
                                 onChange={this.handleChangePaymentConditions}>
                                 </input>
+
+                                <h4 className="input-title">Location</h4>
+                                <input 
+                                className="title-input"
+                                type="text" 
+                                placeholder="Which State are you based?" 
+                                stateLocation={this.state.value} 
+                                onChange={this.handleChangeStateLocation}>
+                                </input>
+                                <button className="save-changes" onclick={this.saveChanges}>Save Changes</button>
+                                <button 
+                                className="create-contract"
+                                type="submit"
+                                >Create Contract</button>
+
                             </form>
                         </div>
                     </div>
@@ -120,7 +152,9 @@ class ContractForm extends Component {
                     serviceDescriptionProps={this.state.serviceDescription} 
                     serviceDueDateProps={this.state.serviceDueDate} 
                     serviceFeeProps={this.state.serviceFee}
-                    paymentConditionsProps={this.state.paymentConditions} 
+                    paymentConditionsProps={this.state.paymentConditions}
+                    stateLocationProps={this.state.stateLocation}
+                    
                     />
                 </div>
             </div>

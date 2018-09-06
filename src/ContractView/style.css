@@ -1,4 +1,22 @@
+.contract-view{
+    padding: 30px;
+    width: 100%;
+    text-align: justify
+}
+.contract-title{
+    text-align: center;
+    font-size: 16px;
+}
 .output {
     color: red;
     font-weight: 700;
+}
+.clause-section-title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+}
+
+.clause-content {
+    font-size: 14px;
 }
