@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import ContractForm from "../ContractForm";
-import ContractView from "../ContractView";
-
+import moment from "moment";
 
 class App extends Component {
   render() {
@@ -12,8 +11,8 @@ class App extends Component {
         <h1 className="heading">Create your freelance contract</h1>
       </div>
       <div className="main-wrapper">
-        <ContractForm className="wrapper-contract-form"/>
-        <ContractView className="wrapper-contract-view"/>
+        <ContractForm />
+        {/* <ContractView /> */}
       </div>
     </div>
     )

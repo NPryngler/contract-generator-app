@@ -9,11 +9,15 @@
 .heading{
     text-align: center;
 }
-.main-wrapper{
+/* .main-wrapper{
     display: flex;
     align-content: space-around;
     border: 2px solid black;
 }
 .wrapper-contract-form{
-    border: 2px solid black;
+    width: 48%;
 }
+.wrapper-contract-view{
+    width: 48%;
+    border: 2px solid black;
+} */

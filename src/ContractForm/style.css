@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+.forms-wrapper{
+    display: flex;
+    align-content: space-between;
+    
+}
+.contract-form-wrapper{
+    width: 50%;
+    text-align: center;
+    border: 2px solid black;
+}
+.contract-view-wrapper{
+    width: 50%;
+    text-align: center;
+    border: 2px solid black;
+    
+}
+input{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
