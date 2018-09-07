@@ -8,6 +8,7 @@ class ContractForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            currentView: 'Dev Contract',
             freelancerName: JSON.parse(localStorage.getItem("freelancer-name")) || "Developer's complete name ",
             clientName: JSON.parse(localStorage.getItem("client-name")) ||"Client's complete name ",
             serviceDescription: JSON.parse(localStorage.getItem("service-description")) ||"Describe what the developer will do. Include any milestones.",
