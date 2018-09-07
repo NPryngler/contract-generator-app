@@ -37,6 +37,7 @@ class ContractView extends Component {
                             <p>The Client will pay the Freelancer upon the following conditions:<span className="output service-fee">{this.props.paymentConditionsProps}</span></p>
                             <p>Upon completion of the work, the Freelancer will invoice Client for any amount due. Payment is due in __________, or as specified in the invoice.</p>
                             <p>Any amount not received by its due date will collect interest at the Prompt Payment Insterest Rate provided by the Department of Treasury.</p>
+                            
                         </div>
                         <div className="clause-section-title">CONFIDENTIAL INFORMATION</div>
                         <div className="clause-content">
@@ -57,7 +58,7 @@ class ContractView extends Component {
                         <div className="clause-section-title">TERMINATION</div>
                         <div className="clause-content">
                             <p>If either party materially breaches this agreement, the non-breaching party may terminate the agreement only by providing written notice of the breach to the breaching party. The breaching party shall have 5 days to cure the breach after receiving such notice. If the breaching party fails to cure the breach in that time, the agreement shall terminate except with respect to those obligations that are noted herein as surviving termination.</p>
-                            <p>If the agreement terminates for any reason other than a material uncured breach by Freelancer, then Freelancer is immediately entitled to: </p>
+                            <p>If the agreement terminates for any reason other than a material uncured breach by Freelancer, then Freelancer is immediately entitled to <span className="output state-location">{this.props.earlyTerminationProps}</span></p>
 
                         </div>
 
