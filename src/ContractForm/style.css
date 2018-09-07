@@ -28,3 +28,10 @@ input{
     font-size: 14px;
 
 }
+label{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 14px;
+}
