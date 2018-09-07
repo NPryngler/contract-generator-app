@@ -5,6 +5,7 @@
   "dependencies": {
     "moment": "^2.22.2",
     "numeral": "^2.0.6",
+    "pdfkit": "^0.8.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5"

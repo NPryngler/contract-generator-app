@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
 import ContractView from "../ContractView";
-import ButtonSave from "../ButtonSave";
 import moment from "moment";
 import numeral from "numeral";
 
@@ -9,15 +8,15 @@ class ContractForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            freelancerName: JSON.parse(localStorage.getItem("freelance")) || "Developer's complete name ",
-            clientName: "Client's complete name ",
-            serviceDescription: "Describe what the developer will do. Include any milestones.",
-            serviceDueDate: "",
-            serviceFee: "",
-            paymentConditions: ' describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery',
-            earlyTermination: "",
-            stateLocation: "",
-            executionDate: "",
+            freelancerName: JSON.parse(localStorage.getItem("freelancer-name")) || "Developer's complete name ",
+            clientName: JSON.parse(localStorage.getItem("client-name")) ||"Client's complete name ",
+            serviceDescription: JSON.parse(localStorage.getItem("service-description")) ||"Describe what the developer will do. Include any milestones.",
+            serviceDueDate: JSON.parse(localStorage.getItem("service-duedate")) ||"",
+            serviceFee: JSON.parse(localStorage.getItem("service-fee")) || 0.00,
+            paymentConditions: JSON.parse(localStorage.getItem("payment-conditions")) || ' describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery',
+            earlyTermination: JSON.parse(localStorage.getItem("early-termination")) || "",
+            stateLocation: JSON.parse(localStorage.getItem("state-location")) || "",
+            executionDate: JSON.parse(localStorage.getItem("execution-date")) || "",
         }
 
     }
@@ -26,6 +25,11 @@ class ContractForm extends Component {
         this.setState({
             freelancerName: str.toUpperCase(),
         })
+    }
+
+    handleSubmitFreela = (event) => {
+
+
     }
     handleChangeClient = (event) => {
         let string = event.target.value
@@ -76,7 +80,9 @@ class ContractForm extends Component {
         })
     }
 
-    handleSubmit = (event) => {
+
+
+    saveChanges = (event) => {
         event.preventDefault();
         let freelancerName = `${this.state.freelancerName}`
         let clientName = `${this.state.clientName}`
@@ -88,155 +94,151 @@ class ContractForm extends Component {
         let stateLocation = `${this.state.stateLocation}`
         let executionDate = `${this.state.executionDate}`
 
-        saveChanges = () => {
-            this.setState(prevState => {
+        this.setState({
 
-                    freelancerName: `${this.state.freelancerName}`,
-                    serviceDescription: `${this.state.serviceDescription}`,
-                    clientName: `${this.state.clientName}`,
-                    serviceDueDate: `${this.state.serviceDueDate}`,
-                    serviceFee: `${this.state.serviceFee}`,
-                    paymentConditions: `${this.state.paymentConditions}`,
-                    earlyTermination: `${this.state.earlyTermination}`,
-                    stateLocation: `${this.state.stateLocation}`,
-                    executionDate: `${this.state.executionDate}`,
-                    
-                
-                    
-                    localStorage.setItem('freelance', JSON.stringify(freelancerName));
-                    localStorage.setItem('clientName', JSON.stringify(clientName));
-                    localStorage.setItem('clientName', JSON.stringify(clientName));
-                })
-                
+            freelancerName: `${this.state.freelancerName}`,
+            serviceDescription: `${this.state.serviceDescription}`,
+            clientName: `${this.state.clientName}`,
+            serviceDueDate: `${this.state.serviceDueDate}`,
+            serviceFee: `${this.state.serviceFee}`,
+            paymentConditions: `${this.state.paymentConditions}`,
+            earlyTermination: `${this.state.earlyTermination}`,
+            stateLocation: `${this.state.stateLocation}`,
+            executionDate: `${this.state.executionDate}`,
+        })
+
+
+        localStorage.setItem('freelancer-name', JSON.stringify(freelancerName));
+        localStorage.setItem('client-name', JSON.stringify(clientName));
+        localStorage.setItem('service-description', JSON.stringify(serviceDescription));
+        localStorage.setItem('service-duedate', JSON.stringify(serviceDueDate));
+        localStorage.setItem('service-fee', JSON.stringify(serviceFee));
+        localStorage.setItem('payment-conditions', JSON.stringify(paymentConditions));
+        localStorage.setItem('early-termination', JSON.stringify(earlyTermination));
+        localStorage.setItem('state-location', JSON.stringify(stateLocation));
+        localStorage.setItem('execution-date', JSON.stringify(executionDate));
+
+
     }
 
-}
 
 
 
 
-render() {
-    return (
-        <div className="forms-wrapper">
-            <div className="contract-form-wrapper">
-                <h1 className="heading">Create</h1>
-                <div className="input-container">
-                    <div className="input-container-text freelancer-name">
-                        <form onClick={this.handleSubmit}>
 
-                            <h4 className="input-title">Freelancer's complete name</h4>
-                            <input
-                                className="title-input"
-                                placeholder="Freelancer complete name"
-                                freelancerName={this.state.value}
-                                onChange={this.handleChangeFreela}>
-                            </input>
+    render() {
+        return (
+            <div className="forms-wrapper">
+                <div className="contract-form-wrapper">
+                    <h1 className="heading">Create</h1>
+                    <div className="input-container">
+                        <div className="input-container-text freelancer-name">
+                            <form onClick={this.handleSubmit}>
+                                <label className="input-title">Freelancer's complete name</label>
+                                <input
+                                    className="title-input"
+                                    placeholder="Freelancer complete name"
+                                    freelancerName={this.state.value}
+                                    onChange={this.handleChangeFreela}>
+                                </input>
 
-                            <h4 className="input-title">Client's complete name</h4>
-                            <input
-                                className="title-input"
-                                placeholder="Client's complete name"
-                                clientName={this.state.value}
-                                onChange={this.handleChangeClient}>
-                            </input>
+                                <label className="input-title">Client's complete name</label>
+                                <input
+                                    className="title-input"
+                                    placeholder="Client's complete name"
+                                    clientName={this.state.value}
+                                    onChange={this.handleChangeClient}>
+                                </input>
 
-                            <h4 className="input-title">Service description</h4>
-                            <input
-                                className="title-input"
-                                placeholder="service description"
-                                serviceDescription={this.state.value}
-                                onChange={this.handleChangeService}>
-                            </input>
+                                <label className="input-title">Service description</label>
+                                <input
+                                    className="title-input"
+                                    placeholder="service description"
+                                    serviceDescription={this.state.value}
+                                    onChange={this.handleChangeService}>
+                                </input>
 
-                            <h4 className="input-title">Service due date</h4>
-                            <input
-                                className="title-input"
-                                type="date"
-                                placeholder="due date"
-                                serviceDueDate={this.state.value}
-                                onChange={this.handleChangeServiceDueDate}>
-                            </input>
+                                <label className="input-title">Service due date</label>
+                                <input
+                                    className="title-input"
+                                    type="date"
+                                    placeholder="due date"
+                                    serviceDueDate={this.state.value}
+                                    onChange={this.handleChangeServiceDueDate}>
+                                </input>
 
-                            <h4 className="input-title">Service fee</h4>
-                            <input
-                                className="title-input"
-                                type="number"
-                                placeholder="$"
-                                serviceFee={this.state.value}
-                                onChange={this.handleChangeServiceFee}>
-                            </input>
+                                <label className="input-title">Service fee</label>
+                                <input
+                                    className="title-input"
+                                    type="number"
+                                    placeholder="$"
+                                    serviceFee={this.state.value}
+                                    onChange={this.handleChangeServiceFee}>
+                                </input>
 
-                            <h4 className="input-title">Payment conditions</h4>
-                            <input
-                                className="title-input"
-                                type="text"
-                                placeholder="specify the payment conditions"
-                                paymentConditions={this.state.value}
-                                onChange={this.handleChangePaymentConditions}>
-                            </input>
+                                <label className="input-title">Payment conditions</label>
+                                <input
+                                    className="title-input"
+                                    type="text"
+                                    placeholder="specify the payment conditions"
+                                    paymentConditions={this.state.value}
+                                    onChange={this.handleChangePaymentConditions}>
+                                </input>
 
-                            <h4 className="input-title">Location</h4>
-                            <input
-                                className="title-input"
-                                type="text"
-                                placeholder="Which State are you based?"
-                                stateLocation={this.state.value}
-                                onChange={this.handleChangeStateLocation}>
-                            </input>
-                            <h4 className="input-title">What happens in case of early termination (without cause)?</h4>
-                            <label className="title-input">Select an early termination clause:
+                                <label className="input-title">Location</label>
+                                <input
+                                    className="title-input"
+                                    type="text"
+                                    placeholder="Which State are you based?"
+                                    stateLocation={this.state.value}
+                                    onChange={this.handleChangeStateLocation}>
+                                </input>
+                                <label className="title-input">Select an early termination clause:
                                     <select className="select-wrapper" earlyTermination={this.state.value} onChange={this.handleChangeEarlyTermination}>
-                                    <option value=' any unpaid fees prorated for the portion of the work completed at the time of termination.'>Pro Rata Payment Clause</option>
-                                    <option value=' liquidated damages in the amount of __________, which the parties agree represents fair compensation for the harm Freelancer would suffer from termination'>Liquidated Damages Clause</option>
-                                </select>
-                            </label>
-                            <h4 className="input-title">When is this contract being signed?</h4>
-                            <input
-                                className="title-input"
-                                type="date"
-                                placeholder="execution date"
-                                executionDate={this.state.value}
-                                onChange={this.handleChangeExecutionDate}>
-                            </input>
-                            <ButtonSave
-                                freelancerNameProps={this.state.freelancerName}
-                                clientNameProps={this.state.clientName}
-                                serviceDescriptionProps={this.state.serviceDescription}
-                                serviceDueDateProps={this.state.serviceDueDate}
-                                serviceFeeProps={this.state.serviceFee}
-                                paymentConditionsProps={this.state.paymentConditions}
-                                stateLocationProps={this.state.stateLocation}
-                                executionDateProps={this.state.executionDate}
-                            />
-                            <button
-                                className="create-contract"
-                                type="submit">
-                                Create Contract
+                                        <option value=' any unpaid fees prorated for the portion of the work completed at the time of termination.'>Pro Rata Payment Clause</option>
+                                        <option value=' liquidated damages in the amount of __________, which the parties agree represents fair compensation for the harm Freelancer would suffer from termination'>Liquidated Damages Clause</option>
+                                    </select>
+                                </label>
+                                <label className="input-title">When is this contract being signed?</label>
+                                <input
+                                    className="title-input"
+                                    type="date"
+                                    placeholder="execution date"
+                                    executionDate={this.state.value}
+                                    onChange={this.handleChangeExecutionDate}>
+                                </input>
+                                <button
+                                    
+                                    className="create-contract"
+                                    onClick={this.saveChanges}
+                                    type="submit">
+                                    Save Contract
                                 </button>
-
-
-                        </form>
+                                <button
+                                    className="create-contract"
+                                    type="submit">
+                                    Create Contract
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-
+                <div className="contract-view-wrapper">
+                    <ContractView
+                        freelancerNameProps={this.state.freelancerName}
+                        clientNameProps={this.state.clientName}
+                        serviceDescriptionProps={this.state.serviceDescription}
+                        serviceDueDateProps={this.state.serviceDueDate}
+                        serviceFeeProps={this.state.serviceFee}
+                        paymentConditionsProps={this.state.paymentConditions}
+                        earlyTerminationProps={this.state.earlyTermination}
+                        stateLocationProps={this.state.stateLocation}
+                        executionDateProps={this.state.executionDate}
+                    />
+                </div>
             </div>
-
-            <div className="contract-view-wrapper">
-                <ContractView
-                    freelancerNameProps={this.state.freelancerName}
-                    clientNameProps={this.state.clientName}
-                    serviceDescriptionProps={this.state.serviceDescription}
-                    serviceDueDateProps={this.state.serviceDueDate}
-                    serviceFeeProps={this.state.serviceFee}
-                    paymentConditionsProps={this.state.paymentConditions}
-                    earlyTerminationProps={this.state.earlyTermination}
-                    stateLocationProps={this.state.stateLocation}
-                    executionDateProps={this.state.executionDate}
-                />
-            </div>
-        </div>
-    )
-}
+        )
+    }
 }
 
 
