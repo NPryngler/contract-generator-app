@@ -10,6 +10,7 @@
 .output {
     color: red;
     font-weight: 700;
+    font-size: 12px;
 }
 .clause-section-title{
     font-weight: bold;
@@ -18,5 +19,17 @@
 }
 
 .clause-content {
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.signature-container-client{
+    border-top: 2px solid black;
+    height: 50px;
+}
+.signature-container-freelancer{
+    border-bottom: 2px solid black;
+    height: 50px;
+}
+.date-location{
+    height: 80px;
 }

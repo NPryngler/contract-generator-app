@@ -37,7 +37,7 @@ class ContractView extends Component {
                             <p>The Client will pay the Freelancer upon the following conditions:<span className="output service-fee">{this.props.paymentConditionsProps}</span></p>
                             <p>Upon completion of the work, the Freelancer will invoice Client for any amount due. Payment is due in __________, or as specified in the invoice.</p>
                             <p>Any amount not received by its due date will collect interest at the Prompt Payment Insterest Rate provided by the Department of Treasury.</p>
-                            
+
                         </div>
                         <div className="clause-section-title">CONFIDENTIAL INFORMATION</div>
                         <div className="clause-content">
@@ -72,21 +72,20 @@ class ContractView extends Component {
                             <p>Signing a copy of this agreement, physical or electronic, will have the same effect as signing an original.</p>
                         </div>
                         <div className="signature-section">
-                            <div><span className="output state-location">{this.props.stateLocationProps}</span>, <span className="output state-location">{this.props.executionDateProps}</span></div>
-                            <div className="signature-container client">
-                                    <p>______________________________________</p>
-                                    <p><span className="output client-name">{this.props.clientNameProps}</span></p>
-                                </div>
-                                <div className="signature-container freelancer"></div>
-                                <p>______________________________________</p>
+
+                            <div className="date-location"><span className="output state-location">{this.props.stateLocationProps}</span>, <span className="output state-location">{this.props.executionDateProps}</span></div>
+                            <div className="signature-container-client">
+                                <p><span className="output client-name">{this.props.clientNameProps}</span></p>
+                            </div>
+                            <div className="signature-container-freelancer"></div>
                                 <p><span className="output freelancer-name">{this.props.freelancerNameProps}</span></p>
                             </div>
 
                         </div>
 
                     </div>
-                </div>
-            
+             </div>
+
         )
     }
 }
