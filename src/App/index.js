@@ -23,6 +23,7 @@ class App extends Component {
     <div>
       <div className="App">
         <h1 className="heading">Create your freelance contract</h1>
+        <h3 className="subtitle">Just type the contract info below and check how your contract will be</h3>
       </div>
       {/* <Nav setView={this.setView} /> */}
       <div className="main-wrapper">

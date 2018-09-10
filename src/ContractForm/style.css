@@ -47,7 +47,7 @@ label{
 
 }
 .input-wrapper:hover {
-    background-color: #3e8e41;
+    background-color: lightseagreen;
 }
 .button-container{
     margin-top: 20px;
@@ -67,7 +67,7 @@ button {
 
 }
 .button-container:hover {
-    background-color: #3e8e41;
+    background-color: lightcoral;
 }
 
 select{
