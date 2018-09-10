@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import "./style.css";
-import ContractView from "../ContractView";
+import ContractDesView from "../ContractDesView";
 import ContactForm from "../ContactForm"
 import FinishedContract from "../FinishedContract";
 import moment from "moment";
 import numeral from "numeral";
 
-class ContractDevForm extends Component {
+class ContractDesForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentView: 'Dev Contract',
+            currentView: 'Design Contract',
             showContactForm: false,
-            freelancerName: JSON.parse(localStorage.getItem("freelancer-name")) || "Developer's complete name ",
+            freelancerName: JSON.parse(localStorage.getItem("freelancer-name")) || "Designer's complete name ",
             clientName: JSON.parse(localStorage.getItem("client-name")) || "Client's complete name ",
-            serviceDescription: JSON.parse(localStorage.getItem("service-description")) || "Describe what the developer will do. Include any milestones.",
+            serviceDescription: JSON.parse(localStorage.getItem("service-description")) || "Describe what the designer will do. Include any milestones.",
             serviceDueDate: JSON.parse(localStorage.getItem("service-duedate")) || "",
             serviceFee: JSON.parse(localStorage.getItem("service-fee")) || 0.00,
-            paymentConditions: JSON.parse(localStorage.getItem("payment-conditions")) || ' describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery',
+            paymentConditions: JSON.parse(localStorage.getItem("payment-conditions")) || " describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery",
             earlyTermination: JSON.parse(localStorage.getItem("early-termination")) || " any unpaid fees prorated for the portion of the work completed at the time of termination.",
             stateLocation: JSON.parse(localStorage.getItem("state-location")) || "",
             executionDate: JSON.parse(localStorage.getItem("execution-date")) || "",
@@ -124,10 +124,10 @@ class ContractDevForm extends Component {
 
     clearChanges = (event) => {
         this.setState({
-            currentView: 'Dev Contract',
-            freelancerName: "Developer's complete name ",
+            currentView: 'Design Contract',
+            freelancerName: "Designer's complete name ",
             clientName: "Client's complete name ",
-            serviceDescription: "Describe what the developer will do. Include any milestones.",
+            serviceDescription: "Describe what the designer will do. Include any milestones.",
             serviceDueDate: "",
             serviceFee: 0.00,
             paymentConditions: ' describe, eg. in two installments of 50%, the first due upon acceptance of this aggreement and the last upon delivery',
@@ -266,7 +266,7 @@ class ContractDevForm extends Component {
                     }
                 </div>
                 <div className="contract-view-wrapper">
-                    <ContractView
+                    <ContractDesView
                         freelancerNameProps={this.state.freelancerName}
                         clientNameProps={this.state.clientName}
                         serviceDescriptionProps={this.state.serviceDescription}
@@ -286,4 +286,4 @@ class ContractDevForm extends Component {
 
 
 
-export default ContractDevForm;
+export default ContractDesForm;

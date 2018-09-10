@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import ContractDevForm from "../ContractDevForm";
+import ContractDesForm from "../ContractDesForm";
 import moment from "moment";
 import Nav from "../Nav";
 // import FinishedContract from "../FinishedContract";
@@ -33,7 +34,8 @@ class App extends Component {
             <h3 className="subtitle">2.Just type the contract info on the left and check how your contract will be on the right side of the screen.</h3>
           </div>
         </div>
-        
+
+        {this.state.currentView === 'Dev Contract' && (
         <div className="main-wrapper">
           <ContractDevForm
             currentViewProps={this.state.currentView}
@@ -41,7 +43,17 @@ class App extends Component {
           {/* <ContractView /> */}
 
         </div>
+        )}
 
+        {this.state.currentView === 'Design Contract' && (
+        <div className="main-wrapper">
+          <ContractDesForm
+            currentViewProps={this.state.currentView}
+            setViewProps={this.setView} />
+          {/* <ContractView /> */}
+
+        </div>
+        )}
         {/* <FinishedContract /> */}
       </div>
     )
