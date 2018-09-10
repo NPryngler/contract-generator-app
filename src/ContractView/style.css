@@ -20,6 +20,7 @@
 
 .clause-content {
     font-size: 12px;
+
 }
 
 .signature-container-client{
@@ -32,4 +33,9 @@
 }
 .date-location{
     height: 80px;
+}
+.service-description-wrapper{
+    display: inline-flex;
+    border: 1px solid red;
+    overflow-x: auto;
 }

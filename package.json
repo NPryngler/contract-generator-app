@@ -8,6 +8,7 @@
     "pdfkit": "^0.8.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-pdf-js": "^4.0.0-alpha.6",
     "react-scripts": "1.1.5"
   },
   "scripts": {

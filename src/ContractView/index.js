@@ -19,7 +19,9 @@ class ContractView extends Component {
                         <div className="clause-section-title">SCOPE OF WORK</div>
                         <div className="clause-content">
                             <p>Freelancer will do the following for Client (the "Scope of Work"):</p>
-                            <p className="output service-description">{this.props.serviceDescriptionProps}</p>
+                            <div className="service-description-wrapper">
+                                <p className="output service-description">{this.props.serviceDescriptionProps}</p>
+                            </div>
                             <p>Freelancer may decline, or charge additionally for, work that Freelancer reasonably deems to be beyond this scope.</p>
                             <p>The final deadline for completing the work is <span className="output service-due-date">{this.props.serviceDueDateProps}</span>.</p>
                         </div>
@@ -78,13 +80,13 @@ class ContractView extends Component {
                                 <p><span className="output client-name">{this.props.clientNameProps}</span></p>
                             </div>
                             <div className="signature-container-freelancer"></div>
-                                <p><span className="output freelancer-name">{this.props.freelancerNameProps}</span></p>
-                            </div>
-
+                            <p><span className="output freelancer-name">{this.props.freelancerNameProps}</span></p>
                         </div>
 
                     </div>
-             </div>
+
+                </div>
+            </div>
 
         )
     }

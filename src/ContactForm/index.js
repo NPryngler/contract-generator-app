@@ -5,12 +5,11 @@ class ContactForm extends Component {
     render(){
         return (
             <div className="contact-form-wrapper">
-            <h2>Give us your contact info to receive your finished contract</h2>
             <form>
-                <label>Your full name
+                <label>Your full name: 
                     <input type="text" placeholder="name"></input>
                 </label>
-                <label>E-mail address
+                <label>E-mail address: 
                     <input type="e-mail" placeholder="email"></input>
                 </label>
                 <button>Submit</button>

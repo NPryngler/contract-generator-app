@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./style.css";
-import ContractForm from "../ContractForm";
+import ContractDevForm from "../ContractDevForm";
 import moment from "moment";
-// import Nav from "../Nav";
+import Nav from "../Nav";
+// import FinishedContract from "../FinishedContract";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       currentView: 'Dev Contract',
@@ -18,22 +19,31 @@ class App extends Component {
   }
 
   render() {
-    
-    return (
-    <div>
-      <div className="App">
-        <h1 className="heading">Create your freelance contract</h1>
-        <h3 className="subtitle">Just type the contract info below and check how your contract will be</h3>
-      </div>
-      {/* <Nav setView={this.setView} /> */}
-      <div className="main-wrapper">
-        <ContractForm 
-        currentViewProps={this.state.currentView}
-        setViewProps={this.setView}/>
-        {/* <ContractView /> */}
 
+    return (
+      <div>
+        <div className="App">
+          <div className="header-container">
+            <h1 className="heading">Create your freelance contract in 3 simple steps</h1>
+            <h3 className="subtitle">1. Choose your contract template.</h3>
+            <div className="nav-container">
+              <Nav
+                setView={this.setView} />
+            </div>
+            <h3 className="subtitle">2.Just type the contract info on the left and check how your contract will be on the right side of the screen.</h3>
+          </div>
+        </div>
+        
+        <div className="main-wrapper">
+          <ContractDevForm
+            currentViewProps={this.state.currentView}
+            setViewProps={this.setView} />
+          {/* <ContractView /> */}
+
+        </div>
+
+        {/* <FinishedContract /> */}
       </div>
-    </div>
     )
   }
 }
