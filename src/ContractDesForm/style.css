@@ -79,3 +79,7 @@ select{
 option{
     font-size: 14px;
 }
+.step{
+    font-size: 25px;
+    color: red;
+}

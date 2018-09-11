@@ -16,7 +16,7 @@ class Nav extends Component {
                         event.preventDefault();
                         this.props.setView('Dev Contract');
                     }}>
-                    Software Development Contract
+                    SOFTWARE DEVELOPMENT CONTRACT
             </a>
                 <a
                     className="contract-option"
@@ -25,7 +25,7 @@ class Nav extends Component {
                         event.preventDefault();
                         this.props.setView('Design Contract');
                     }}>
-                    UX/Design Contract
+                    UX/DESIGN CONTRACT
             </a>
             </nav>
         )

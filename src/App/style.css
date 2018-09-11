@@ -24,3 +24,11 @@ button{
 button :hover {
     background: indigo;
 }
+.step{
+    font-size: 25px;
+    color: red;
+}
+.subtitle :hover{
+    font-size: 25px;
+    font-weight: bold;
+}

@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import ContractView from "../ContractView";
 import ContactForm from "../ContactForm"
-import FinishedContract from "../FinishedContract";
-import moment from "moment";
-import numeral from "numeral";
+// import FinishedContract from "../FinishedContract";
 
 class ContractDevForm extends Component {
     constructor(props) {
@@ -241,7 +239,7 @@ class ContractDevForm extends Component {
                                     </button>
                                 </div>
                                 <div>
-                                    <h3 className="subtitle">3. Tell us your e-mail to get the contract file.</h3>
+                                    <h3 className="subtitle"><span className="step">3.</span> Tell us your e-mail to get the contract file.</h3>
                                     <button
                                         className="finish-contract"
                                         type="submit"

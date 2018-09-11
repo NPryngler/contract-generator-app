@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import ContractDevForm from "../ContractDevForm";
 import ContractDesForm from "../ContractDesForm";
-import moment from "moment";
 import Nav from "../Nav";
 // import FinishedContract from "../FinishedContract";
 
@@ -26,12 +25,12 @@ class App extends Component {
         <div className="App">
           <div className="header-container">
             <h1 className="heading">Create your freelance contract in 3 simple steps</h1>
-            <h3 className="subtitle">1. Choose your contract template.</h3>
+            <h3 className="subtitle"><span className="step">1.</span>Choose your contract template.</h3>
             <div className="nav-container">
               <Nav
                 setView={this.setView} />
             </div>
-            <h3 className="subtitle">2.Just type the contract info on the left and check how your contract will be on the right side of the screen.</h3>
+            <h3 className="subtitle"><span className="step">2.</span>Just type the contract info on the left and check how your contract will be on the right side of the screen.</h3>
           </div>
         </div>
 
